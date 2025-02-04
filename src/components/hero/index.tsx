@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 interface PropsHero {
     title: string;
@@ -7,10 +7,10 @@ interface PropsHero {
 }
 const Hero = ({ title, subtitle }: PropsHero) => {
     return (
-        <div>
+        <View>
             <p style={styles.title}>{title}</p>
             {subtitle}
-        </div>
+        </View>
     )
 }
 

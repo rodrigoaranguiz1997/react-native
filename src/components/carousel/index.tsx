@@ -12,7 +12,6 @@ interface CarouselProps {
 const CarouselHome = ({data}: CarouselProps) => {
     const width = Dimensions.get("screen").width;
     return (
-        <div>
             <View style={{ flex: 1 }}>
                 <Carousel
                     loop
@@ -21,8 +20,8 @@ const CarouselHome = ({data}: CarouselProps) => {
                     autoPlay={true}
                     data={data}
                     scrollAnimationDuration={1000}
-                    onSnapToItem={(index) => console.log('current index:', index)}
-                    renderItem={({ index, item }) => (
+                    onSnapToItem={(index: number) => console.log('current index:', index)}
+                    renderItem={(item: DataProps) => (
                         <View
                             style={{
                                 flex: 1,
@@ -38,8 +37,6 @@ const CarouselHome = ({data}: CarouselProps) => {
                     )}
                 />
             </View>
-
-        </div>
     )
 }
 
