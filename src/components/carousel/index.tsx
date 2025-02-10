@@ -9,34 +9,34 @@ export interface DataProps {
 interface CarouselProps {
     data: DataProps[]
 }
-const CarouselHome = ({data}: CarouselProps) => {
+const CarouselHome = ({ data }: CarouselProps) => {
     const width = Dimensions.get("screen").width;
     return (
-            <View style={{ flex: 1 }}>
-                <Carousel
-                    loop
-                    width={width}
-                    height={width / 2}
-                    autoPlay={true}
-                    data={data}
-                    scrollAnimationDuration={1000}
-                    onSnapToItem={(index: number) => console.log('current index:', index)}
-                    renderItem={(item: DataProps) => (
-                        <View
-                            style={{
-                                flex: 1,
-                                borderWidth: 1,
-                                justifyContent: 'center',
-                            }}
-                        >
-                            <Image source={item.url as ImageProps}></Image>
-                            <Text style={{ textAlign: 'center', fontSize: 30 }}>
-                                {item.name}
-                            </Text>
-                        </View>
-                    )}
-                />
-            </View>
+        <View style={{ flex: 1 }}>
+            <Carousel
+                loop
+                width={width}
+                height={width / 2}
+                autoPlay={true}
+                data={data}
+                scrollAnimationDuration={1000}
+                onSnapToItem={(index: number) => console.log('current index:', index)}
+                renderItem={(item: DataProps) => (
+                    <View
+                        style={{
+                            flex: 1,
+                            borderWidth: 1,
+                            justifyContent: 'center',
+                        }}
+                    >
+                        <Image source={item.url as ImageProps}></Image>
+                        <Text style={{ textAlign: 'center', fontSize: 30 }}>
+                            {item.name}
+                        </Text>
+                    </View>
+                )}
+            />
+        </View>
     )
 }
 
