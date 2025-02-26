@@ -1,13 +1,14 @@
 import { useLocalSearchParams } from 'expo-router'
 import React from 'react'
+import { View } from 'react-native'
 
 const CityDetailScreen = () => {
     const url = useLocalSearchParams()
     
   return (
-    <div>
+    <View>
       {url.name}
-    </div>
+    </View>
   )
 }
 

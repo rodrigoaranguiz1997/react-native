@@ -1,7 +1,17 @@
 import { Tabs } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
-
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../store';
+import { useRouter } from 'expo-router';
+import { useEffect } from 'react';
 export default function TabsLayout() {
+  const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
+  const router = useRouter();
+  useEffect(() => {
+    if (!isAuthenticated) router.replace('/login');
+    //if (!isAuthenticated) router.replace('/screens/LoginScreen');
+
+  }, [isAuthenticated]);
   return (
     <Tabs
       screenOptions={{
